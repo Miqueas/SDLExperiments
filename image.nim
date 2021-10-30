@@ -1,5 +1,6 @@
 import sdl2
 import sdl2/image as img
+import std/with
 
 discard sdl2.init(INIT_EVERYTHING)
 discard img.init()
@@ -29,8 +30,9 @@ while running:
   while ev.pollEvent():
     if ev.kind == QuitEvent: running = false
 
-  render.copy(texture, nil, nil)
-  render.present()
+  with render:
+    copy(texture, nil, nil)
+    present()
 
 texture.destroy()
 render.destroy()
