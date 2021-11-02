@@ -32,7 +32,8 @@ while running:
     if ev.kind == QuitEvent:
       running = false
 
-      if timer > 0:
-        discard removeTimer(timer)
+if timer > 0:
+  discard removeTimer(timer)
 
+win.destroy()
 sdl2.quit()
