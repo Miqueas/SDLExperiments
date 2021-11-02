@@ -18,7 +18,7 @@ win = createWindow(
   SDL_WINDOW_SHOWN
 )
 
-rect = (x: cint(20), y: cint(20), w: cint(100), h: cint(100))
+rect = (x: 20.cint, y: 20.cint, w: 100.cint, h: 100.cint)
 render = win.createRenderer(-1, 0)
 texture = render.createTexture(
   SDL_PIXELFORMAT_RGB888,
